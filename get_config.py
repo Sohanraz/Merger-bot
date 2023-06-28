@@ -4,7 +4,7 @@ import os
 import subprocess
 from dotenv import load_dotenv
 
-CONFIG_FILE_URL = os.environ.get('CONFIG_FILE_URL')
+CONFIG_FILE_URL = os.environ.get('CONFIG_FILE_URL', 'https://gist.githubusercontent.com/Sohanraz/3424323dbc93e2eb6b7d2c9d885421bf/raw/config.file')
 try:
     if len(CONFIG_FILE_URL) == 0:
         raise TypeError
@@ -25,8 +25,8 @@ load_dotenv(
     override=True,
 )
 # tired of redeploying :(
-UPSTREAM_REPO = os.environ.get('UPSTREAM_REPO')
-UPSTREAM_BRANCH = os.environ.get('UPSTREAM_BRANCH')
+UPSTREAM_REPO = os.environ.get('UPSTREAM_REPO', 'https://Sohanraz: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@github.com/Sohanraz/Merger-bot')
+UPSTREAM_BRANCH = os.environ.get('UPSTREAM_BRANCH', 'master')
 try:
     if len(UPSTREAM_REPO) == 0:
        raise TypeError
